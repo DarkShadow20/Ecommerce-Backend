@@ -10,7 +10,7 @@ router.route("/")
          const { _id, ...doc } = item._id._doc;
         return { id: _id, ...doc, quantity: item.quantity };
       });
-      res.json(normalizedCartItems);
+      res.status(201).json(normalizedCartItems);
     }
     catch (err) {
       res.status(500).json({ success: false, message: "Could not fetch your cart"})

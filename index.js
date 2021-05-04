@@ -13,8 +13,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 connectDB();
-// run once
-//fillProductsCollection()
 
 app.get("/", (req, res) => {
   res.send("API for Nile");

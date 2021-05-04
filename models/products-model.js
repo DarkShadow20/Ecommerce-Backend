@@ -18,8 +18,7 @@ const productSchema = new Schema({
 
 const Product = mongoose.model("Product", productSchema);
 
-// one time add in db
-async function fillProductsCollection() {
+const fillProductsCollection= async ()=> {
   try {
     productsData.forEach(async (product) => {
       const newProduct = new Product(product);
