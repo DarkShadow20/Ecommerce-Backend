@@ -17,8 +17,6 @@ const products = [...Array(40)].map((item) => ({
   image: faker.random.image(),
   category:faker.random.arrayElement([...categories]),
   price: faker.commerce.price(),
-  material: faker.commerce.productMaterial(),
-  brand: faker.lorem.word(),
   inStock: faker.random.boolean(),
   fastDelivery: faker.random.boolean(),
   quantity:faker.random.number({

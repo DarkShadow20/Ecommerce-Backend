@@ -1,22 +1,26 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
-const productsData = require("./products-data");
+const productsData = require("./product-data");
 
 const productSchema = new Schema({
-  id: Schema.Types.ObjectId,
-  name: String,
+   name:{
+      type: String,
+      required: "Name of the product is a required attribute",
+  },
   image: String,
-  price: Number,
+  category: String,
+  price: {
+      type: Number,
+      required: "Price value of the product is required"
+  },
   inStock: Boolean,
   fastDelivery: Boolean,
-  rating: Number,
-  discount: Number,
-  category: String,
-  rating:Number,
-  quantity:Number
+  quantity:Number,
+ rating: Number,
 });
 
 const Product = mongoose.model("Product", productSchema);
+
 
 const fillProductsCollection= async ()=> {
   try {
